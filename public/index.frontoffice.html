@@ -362,7 +362,7 @@
              ],
          ];
 
-         if ("serviceWorker" in navigator) {
+         if ("serviceWorker" in navigator && window.self === window.top) {
              const register = await navigator.serviceWorker.register("sw.js");
              await new Promise((resolve) => {
                  register.active ?
